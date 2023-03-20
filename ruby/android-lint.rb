@@ -41,9 +41,8 @@ end
 
 logger = Logger.new($stderr)
 
-xml_file ="./app/build/reports/lint-results-debug.xml"
+xml_file = ENV["LINT_XML_OUTPUT"]
 logger.info("INPUT XML: #{xml_file}")
-logger.info(ENV["LINT_XML_OUTPUT"])
 
 error_count  = 0
 fatal_count  = 0
@@ -88,11 +87,11 @@ end
 
 print_error_counts(logger, error_count, fatal_count, ignore_count, informational_count, warning_count)
 
-system( "envman add --key LINT_OUTPUT_ERROR --value #{error_count}" )
-system( "envman add --key LINT_OUTPUT_FATAL --value #{fatal_count}" )
-system( "envman add --key LINT_OUTPUT_IGNORE --value #{ignore_count}" )
-system( "envman add --key LINT_OUTPUT_INFO --value #{informational_count}" )
-system( "envman add --key LINT_OUTPUT_WARNING --value #{warning_count}" )
+system( "export LINT_OUTPUT_ERROR=#{error_count}" )
+system( "export LINT_OUTPUT_FATAL=#{fatal_count}" )
+system( "export LINT_OUTPUT_IGNORE=#{ignore_count}" )
+system( "export LINT_OUTPUT_INFO=#{informational_count}" )
+system( "export LINT_OUTPUT_WARNING=#{warning_count}" )
 
 if error_count.positive? || fatal_count.positive?
   logger.error("Critical errors count : #{error_count + fatal_count}")

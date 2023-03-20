@@ -8,11 +8,10 @@ lint_module=$MODULE
 variant=$VARIANT
 
 loc=${loc}/${lint_module}/build/reports
-xml_loc=${loc}/lint-results-${variant}.xml
-html_loc=${loc}/lint-results-${variant}.html
+file_loc=${loc}/lint-results-${variant}
 
-export LINT_XML_OUTPUT=$xml_loc
-export LINT_HTML_OUTPUT=$html_loc
+export LINT_XML_OUTPUT=${file_loc}.xml
+export LINT_HTML_OUTPUT=${file_loc}.html
 
 echo $LINT_XML_OUTPUT
 echo $LINT_HTML_OUTPUT
