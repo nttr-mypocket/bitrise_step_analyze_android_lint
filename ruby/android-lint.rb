@@ -41,6 +41,10 @@ end
 
 logger = Logger.new($stderr)
 
+Dir.entries('../..').each do |filename|
+  puts filename
+end
+
 xml_file = ENV["LINT_XML_OUTPUT_RUBY"]
 logger.info("INPUT XML: #{xml_file}")
 
