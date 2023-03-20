@@ -93,7 +93,7 @@ system( "export LINT_OUTPUT_IGNORE=#{ignore_count}" )
 system( "export LINT_OUTPUT_INFO=#{informational_count}" )
 system( "export LINT_OUTPUT_WARNING=#{warning_count}" )
 
-puts "test" + $LINT_OUTPUT_WARNING
+puts "test" + ENV["LINT_OUTPUT_WARNING"]
 
 if error_count.positive? || fatal_count.positive?
   logger.error("Critical errors count : #{error_count + fatal_count}")
