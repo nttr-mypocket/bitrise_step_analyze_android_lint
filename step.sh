@@ -5,7 +5,6 @@ set -ex
 echo "Current folder: $(pwd)"
 # Print the files and folders in the current directory
 echo "Files and folders in the current directory:"
-cd ..
 ls
 
 chmod +x ./shell/prepare-lint-variables.sh
