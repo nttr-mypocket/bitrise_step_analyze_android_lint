@@ -1,6 +1,9 @@
 #!/bin/bash
 set -ex
 
+# Print the current folder
+echo "Current folder: $(pwd)"
+
 chmod +x ./shell/prepare-lint-variables.sh
 source ./shell/prepare-lint-variables.sh
 
