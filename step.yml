@@ -16,9 +16,9 @@ is_always_run: false
 is_skippable: false
 deps:
   brew:
-    - name: ruby@2.7.5
+    - name: ruby@2.7
   apt_get:
-    - name: ruby@2.7.5
+    - name: ruby@2.7
 toolkit:
   bash:
     entry_file: step.sh
