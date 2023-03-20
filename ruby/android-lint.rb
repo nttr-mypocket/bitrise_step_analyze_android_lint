@@ -41,7 +41,7 @@ end
 
 logger = Logger.new($stderr)
 
-Dir.entries('../..').each do |filename|
+Dir.entries('..').each do |filename|
   puts filename
 end
 
