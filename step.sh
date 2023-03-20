@@ -13,7 +13,7 @@ envman add --key LINT_XML_OUTPUT --value $xml_loc
 envman add --key LINT_HTML_OUTPUT --value $html_loc
 
 # Set the path to the lint XML output file
-xml_file=$LINT_XML_OUTPUT
+xml_file=$xml_loc
 
 # check if xml_file is not empty
 if [ -z "$xml_file" ]
