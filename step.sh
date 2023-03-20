@@ -10,7 +10,7 @@ git clone https://github.com/nttr-mypocket/bitrise_step_analyze_android_lint.git
 chmod +x ./${folder}/shell/prepare-lint-variables.sh
 source ./${folder}/shell/prepare-lint-variables.sh
 
-chmod +x ./${folder}/shell/install-ruby.sh
-source ./${folder}/shell/install-ruby.sh
+#chmod +x ./${folder}/shell/install-ruby.sh
+#source ./${folder}/shell/install-ruby.sh
 
 ruby ./${folder}/ruby/android-lint.rb
