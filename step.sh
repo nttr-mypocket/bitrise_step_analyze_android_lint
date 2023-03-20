@@ -41,8 +41,10 @@ while IFS= read -r line; do
     ((ignore_count++))
   elif [[ "$line" =~ severity=\"Fatal\" ]]; then
     ((fatal_count++))
+  else
+    echo "Unknown severity level in line: $line"
   fi
-done < "$xml_file"
+done < "$xml_file" || { echo "Error reading file $xml_file"; exit 1; }
 
 # print error counts
 echo "error count: $error_count"
