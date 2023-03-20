@@ -1,6 +1,5 @@
 #!/bin/bash
 set -ex
-set +x
 set +v
 
 loc=$PROJECT_LOCATION
@@ -14,5 +13,5 @@ html_loc=${loc}/lint-results-${variant}.html
 envman add --key LINT_XML_OUTPUT --value $xml_loc
 envman add --key LINT_HTML_OUTPUT --value $html_loc
 
-echo LINT_XML_OUTPUT
-echo LINT_HTML_OUTPUT
+echo $LINT_XML_OUTPUT
+echo $LINT_HTML_OUTPUT

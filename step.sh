@@ -1,6 +1,5 @@
 #!/bin/bash
 set -ex
-set +x
 set +v
 
 folder="step-folder"
