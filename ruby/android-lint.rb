@@ -43,6 +43,7 @@ logger = Logger.new($stderr)
 
 xml_file ="./app/build/reports/lint-results-debug.xml"
 logger.info("INPUT XML: #{xml_file}")
+logger.info(ENV["LINT_XML_OUTPUT"])
 
 error_count  = 0
 fatal_count  = 0
