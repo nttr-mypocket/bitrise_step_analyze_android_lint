@@ -41,8 +41,6 @@ end
 
 logger = Logger.new($stderr)
 
-puts File.expand_path(__FILE__)
-
 xml_file = ENV["LINT_XML_OUTPUT_RUBY"]
 logger.info("INPUT XML: #{xml_file}")
 
