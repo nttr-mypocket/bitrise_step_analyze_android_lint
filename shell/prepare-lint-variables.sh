@@ -1,5 +1,6 @@
 #!/bin/bash
 set -ex
+set +x
 set +v
 
 loc=$PROJECT_LOCATION
