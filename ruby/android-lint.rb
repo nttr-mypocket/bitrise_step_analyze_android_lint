@@ -41,11 +41,7 @@ end
 
 logger = Logger.new($stderr)
 
-Dir.entries('./app/build/reports/').each do |filename|
-  puts filename
-end
-
-xml_file = ENV["LINT_XML_OUTPUT"]
+xml_file ="./app/build/reports/lint-results-debug.xml"
 logger.info("INPUT XML: #{xml_file}")
 
 error_count  = 0
