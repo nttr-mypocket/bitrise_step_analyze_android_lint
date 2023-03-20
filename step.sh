@@ -9,10 +9,10 @@ echo "Current folder: $(pwd)"
 echo "Files and folders in the current directory:"
 ls
 
-chmod +x ./shell/prepare-lint-variables.sh
-source ./shell/prepare-lint-variables.sh
+chmod +x ./test-folder/shell/prepare-lint-variables.sh
+source ./test-folder/shell/prepare-lint-variables.sh
 
-chmod +x ./shell/install-ruby.sh
-source ./shell/install-ruby.sh
+chmod +x ./test-folder/shell/install-ruby.sh
+source ./test-folder/shell/install-ruby.sh
 
-ruby ./ruby/android-lint.rb
+ruby ./test-folder/ruby/android-lint.rb
