@@ -41,7 +41,7 @@ end
 
 logger = Logger.new($stderr)
 
-xml_file = ENV["LINT_XML_OUTPUT"]
+xml_file = ENV["LINT_XML_OUTPUT_RUBY"]
 logger.info("INPUT XML: #{xml_file}")
 
 error_count  = 0
