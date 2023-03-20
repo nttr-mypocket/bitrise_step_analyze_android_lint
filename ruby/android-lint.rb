@@ -41,7 +41,7 @@ end
 
 logger = Logger.new($stderr)
 
-Dir.entries('.').each do |filename|
+Dir.entries('./app/build/reports/').each do |filename|
   puts filename
 end
 
