@@ -3,7 +3,7 @@ set -ex
 set +x
 set +v
 
-folder="step-folder"
+folder=$step_clone_dir_branch
 
 loc=$PROJECT_LOCATION
 lint_module=$MODULE
