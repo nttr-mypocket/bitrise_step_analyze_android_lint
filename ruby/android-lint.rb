@@ -48,7 +48,7 @@ logger = Logger.new($stderr)
 
 # Lintの出力ファイルを取得する
 xml_file = ENV["LINT_XML_OUTPUT"]
-logger.info("入力XML: #{xml_file}")
+logger.info("Input XML: #{xml_file}")
 
 # エラーの種類ごとにカウントするための変数を初期化する
 error_count  = 0
@@ -91,8 +91,7 @@ begin
   end
 rescue StandardError => e
   # ファイルのオープンに失敗した場合はエラーをログに出力して終了する
-  logger.error("XMLファイルを開くのに失敗しました: #{xml_file}")
-  logger.error("エラー: #{e.message}")
+  logger.error("File Open Failed: #{xml_file}, Error: #{e.message}")
   exit(1)
 end
 
@@ -108,6 +107,6 @@ system( "envman add --key LINT_OUTPUT_WARNING --value #{warning_count}" )
 
 # エラーカウントがある場合、エラーログを出力し、スクリプトを終了する
 if error_count.positive? || fatal_count.positive?
-  logger.error("致命的なエラーの数： #{error_count + fatal_count}")
+  logger.error("Fatal or Error count： #{error_count + fatal_count}")
   exit(2)
 end

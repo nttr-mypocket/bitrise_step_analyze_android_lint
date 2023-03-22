@@ -5,12 +5,12 @@ set +v
 
 folder=$step_clone_dir_branch
 
-# ステップのリポジトリをクロンする
+# ステップのリポジトリをクローンする
 git clone -b $step_branch $step_repository_url $folder
 
-loc=$PROJECT_LOCATION
-lint_module=$MODULE
-variant=$VARIANT
+loc=$target_project_location
+lint_module=$target_module
+variant=$build_variant
 
 # lintの実行結果を保存するファイルのパスを設定する
 loc=${loc}/${lint_module}/build/reports

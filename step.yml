@@ -23,17 +23,17 @@ toolkit:
   bash:
     entry_file: step.sh
 inputs:
-  - project_location: $PROJECT_LOCATION
+  - target_project_location: $PROJECT_LOCATION
     opts:
       title: "Project location"
       description: "Root directory of the project"
       is_required: true
-  - module: $MODULE
+  - target_module: $MODULE
     opts:
       title: "Lint module"
       description: "Lint module"
       is_required: true
-  - variant: $VARIANT
+  - build_variant: $VARIANT
     opts:
       title: "Build variant"
       description: "Build variant"
