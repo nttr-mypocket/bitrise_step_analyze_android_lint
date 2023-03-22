@@ -7,4 +7,9 @@ app:
 workflows:
   lint:
     steps:
+    - git-clone@6:
+        inputs:
+        - repository_url: https://github.com/nttr-mypocket/bitrise_step_analyze_android_lint.git
+        - branch: $step_branch
+        - clone_into_dir: sample_clone
     - path::./: {}

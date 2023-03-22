@@ -28,19 +28,22 @@ inputs:
       title: "Project location"
       description: "Root directory of the project"
       is_required: true
-      is_dont_change_value: true
   - module: $MODULE
     opts:
       title: "Lint module"
       description: "Lint module"
       is_required: true
-      is_dont_change_value: true
   - variant: $VARIANT
     opts:
       title: "Build variant"
       description: "Build variant"
       is_required: true
-      is_dont_change_value: true
+  - step_branch: main
+    opts:
+      category: "Script Configuration"
+      title: "Step Branch"
+      description: "Step Branch"
+      is_required: true
 outputs:
   - LINT_XML_OUTPUT:
     opts:

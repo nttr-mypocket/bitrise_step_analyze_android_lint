@@ -5,9 +5,6 @@ set +v
 
 folder="step-folder"
 
-# ステップのリポジトリをクロンする
-git clone https://github.com/nttr-mypocket/bitrise_step_analyze_android_lint.git $folder
-
 loc=$PROJECT_LOCATION
 lint_module=$MODULE
 variant=$VARIANT
