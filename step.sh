@@ -5,6 +5,9 @@ set +v
 
 folder=$step_clone_dir_branch
 
+# ステップのリポジトリをクロンする
+git clone -b $step_branch $step_repository_url $folder
+
 loc=$PROJECT_LOCATION
 lint_module=$MODULE
 variant=$VARIANT
