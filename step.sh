@@ -31,7 +31,12 @@ export LINT_HTML_OUTPUT=${file_loc}.html
 
 # ステップのリポジトリをクローンする
 echo "Prepare Scripts file, with Git Clone. Dir: $scripts_dir"
-git clone -b $step_branch $step_repository_url $scripts_dir
+if [ -d "$scripts_dir" ]; then
+  echo "Directory '$scripts_dir' already exists."
+else
+  echo "Cloning branch '$step_branch' from repository '$step_repository_url' to directory '$scripts_dir'..."
+  git clone -b $step_branch $step_repository_url $scripts_dir
+fi
 echo "Prepared Scripts file."
 
 # 環境変数を設定する
