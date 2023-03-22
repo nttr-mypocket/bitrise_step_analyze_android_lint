@@ -40,19 +40,19 @@ inputs:
       is_required: true
   - step_repository_url: https://github.com/nttr-mypocket/bitrise_step_analyze_android_lint.git
     opts:
-      category: "Script Configuration"
+      category: Script Configuration
       title: "Step Repository URL"
       description: "Step Repository URL"
       is_required: true
   - step_clone_dir_branch: step-folder
     opts:
-      category: "Script Configuration"
+      category: Script Configuration
       title: "Step Clone Directory"
       description: "Step Clone Directory"
       is_required: true
   - step_branch: main
     opts:
-      category: "Script Configuration"
+      category: Script Configuration
       title: "Step Branch"
       description: "Step Branch"
       is_required: true
