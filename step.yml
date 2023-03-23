@@ -1,7 +1,7 @@
 # Copyright © 2023 NTT Resonant Technology Inc. All Rights Reserved.
 
 title: |-
-  Bitrise step Analyze Android Lint
+  Analyze Android Lint
 summary: |
   Bitrise step Analyze Android Lint
 description: |
