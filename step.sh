@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Copyright © 2023 NTT Resonant Technology Inc. All Rights Reserved.
+
 set -ex
 set +x
 set +v
@@ -44,6 +47,6 @@ envman add --key LINT_XML_OUTPUT --value ${LINT_XML_OUTPUT}
 envman add --key LINT_HTML_OUTPUT --value ${LINT_HTML_OUTPUT}
 
 # rubyを実行する
-ruby ./${scripts_dir}/ruby/android-lint.rb
+ruby ./${scripts_dir}/ruby/android_lint.rb
 
 echo "Complete Lint Analyze"
