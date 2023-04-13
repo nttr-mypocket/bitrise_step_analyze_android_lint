@@ -42,22 +42,31 @@ inputs:
       is_required: true
   - step_repository_url: https://github.com/nttr-mypocket/bitrise_step_analyze_android_lint.git
     opts:
-      category: Script Configuration
+      category: Config
       title: "Step Repository URL"
       description: "Step Repository URL"
       is_required: true
   - step_clone_dir_branch: step-folder
     opts:
-      category: Script Configuration
+      category: Config
       title: "Step Clone Directory"
       description: "Step Clone Directory"
       is_required: true
   - step_branch: main
     opts:
-      category: Script Configuration
+      category: Config
       title: "Step Branch"
       description: "Step Branch"
       is_required: true
+  - fail_on_error: no
+    opts:
+      category: Config
+      description: |-
+        Do you want to fail the build if there are any errors?
+      title: "Fail on error"
+      value_options:
+        - yes
+        - no
 outputs:
   - LINT_XML_OUTPUT:
     opts:
@@ -66,7 +75,7 @@ outputs:
   - LINT_HTML_OUTPUT:
     opts:
       title: "Lint html result location"
-      description: "Generates path for XML file"
+      description: "Generates path for HTML file"
   - LINT_OUTPUT_ERROR:
     opts:
       title: "Lint errors count"

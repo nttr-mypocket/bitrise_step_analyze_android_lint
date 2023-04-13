@@ -28,11 +28,11 @@ Location = Struct.new(
 
 # エラーのカウントを出力する関数
 def print_error_counts(logger, error_count, fatal_count, ignore_count, informational_count, warning_count)
-  logger.info("error count: #{error_count}")
-  logger.info("fatal count: #{fatal_count}")
-  logger.info("ignore count: #{ignore_count}")
-  logger.info("informational count: #{informational_count}")
-  logger.info("warning count: #{warning_count}")
+  logger.info("error count : #{error_count}")
+  logger.info("fatal count : #{fatal_count}")
+  logger.info("ignore count : #{ignore_count}")
+  logger.info("informational count : #{informational_count}")
+  logger.info("warning count : #{warning_count}")
 end
 
 # Locationオブジェクトを生成する関数
@@ -93,7 +93,7 @@ begin
   end
 rescue StandardError => e
   # ファイルのオープンに失敗した場合はエラーをログに出力して終了する
-  logger.error("File Open Failed: #{xml_file}, Error: #{e.message}")
+  logger.error("File Open Failed : #{xml_file}, Error : #{e.message}")
   exit(1)
 end
 
@@ -108,7 +108,13 @@ system( "envman add --key LINT_OUTPUT_INFO --value #{informational_count}" )
 system( "envman add --key LINT_OUTPUT_WARNING --value #{warning_count}" )
 
 # エラーカウントがある場合、エラーログを出力し、スクリプトを終了する
-if error_count.positive? || fatal_count.positive?
-  logger.error("Fatal or Error count： #{error_count + fatal_count}")
+if error_count.positive? || fatal_count.positive? && ENV["fail_on_error"] == "yes"
+  logger.error("Fatal or Error count : #{error_count + fatal_count}")
+  logger.info("Throwing error in order to fail the build.")
   exit(2)
+elsif error_count.positive? || fatal_count.positive?
+  logger.info("Critical error count : #{error_count}")
+  logger.info("Keeping the build alive.")
+else
+  logger.info("No error has been found.")
 end

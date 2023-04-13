@@ -6,17 +6,16 @@ set -ex
 set +x
 set +v
 
-echo "Start Android Lint"
-./gradlew :app:lint${VARIANT}
-
 echo "Print Environments"
-
 echo "  target_project_location: $target_project_location"
 echo "  target_module: $target_module"
 echo "  build_variant: $build_variant"
 echo "  step_repository_url: $step_repository_url"
 echo "  step_clone_dir_branch: $step_clone_dir_branch"
 echo "  step_branch: $step_branch"
+
+echo "Start Android Lint"
+./gradlew :app:lint${build_variant}
 
 echo "Generate Environments"
 scripts_dir=$step_clone_dir_branch
