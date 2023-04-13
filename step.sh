@@ -6,9 +6,10 @@ set -ex
 set +x
 set +v
 
-echo "Start Lint Analyze"
+echo "Start Android Lint"
+./gradlew :app:lint${VARIANT}
 
-echo "Print Enviroments"
+echo "Print Environments"
 
 echo "  target_project_location: $target_project_location"
 echo "  target_module: $target_module"
@@ -17,7 +18,7 @@ echo "  step_repository_url: $step_repository_url"
 echo "  step_clone_dir_branch: $step_clone_dir_branch"
 echo "  step_branch: $step_branch"
 
-echo "Generate Enviroments"
+echo "Generate Environments"
 scripts_dir=$step_clone_dir_branch
 lint_module=$target_module
 variant=$build_variant
@@ -38,15 +39,16 @@ if [ -d "$scripts_dir" ]; then
   echo "Directory '$scripts_dir' already exists."
 else
   echo "Cloning branch '$step_branch' from repository '$step_repository_url' to directory '$scripts_dir'..."
-  git clone -b $step_branch $step_repository_url $scripts_dir
+  git clone -b "$step_branch" "$step_repository_url" "$scripts_dir"
 fi
 echo "Prepared Scripts file."
 
 # 環境変数を設定する
-envman add --key LINT_XML_OUTPUT --value ${LINT_XML_OUTPUT}
-envman add --key LINT_HTML_OUTPUT --value ${LINT_HTML_OUTPUT}
+envman add --key LINT_XML_OUTPUT --value "${LINT_XML_OUTPUT}"
+envman add --key LINT_HTML_OUTPUT --value "${LINT_HTML_OUTPUT}"
 
+echo "Start Lint Analyze"
 # rubyを実行する
-ruby ./${scripts_dir}/ruby/android_lint.rb
+ruby ./"${scripts_dir}"/ruby/android_lint.rb
 
 echo "Complete Lint Analyze"
