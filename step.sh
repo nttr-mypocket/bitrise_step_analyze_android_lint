@@ -15,7 +15,7 @@ echo "  step_clone_dir_branch: $step_clone_dir_branch"
 echo "  step_branch: $step_branch"
 
 echo "Start Android Lint"
-./gradlew :app:lint${build_variant}
+"${target_project_location}"/gradlew :app:lint${build_variant}
 
 echo "Generate Environments"
 scripts_dir=$step_clone_dir_branch
