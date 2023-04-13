@@ -108,7 +108,7 @@ system( "envman add --key LINT_OUTPUT_INFO --value #{informational_count}" )
 system( "envman add --key LINT_OUTPUT_WARNING --value #{warning_count}" )
 
 # エラーカウントがある場合、エラーログを出力し、スクリプトを終了する
-if error_count.positive? || fatal_count.positive? && ENV["fail_on_error"] == "yes"
+if (error_count.positive? || fatal_count.positive?) && ENV["fail_on_error"] == "yes"
   logger.error("Fatal or Error count : #{error_count + fatal_count}")
   logger.info("Throwing error in order to fail the build.")
   exit(2)
