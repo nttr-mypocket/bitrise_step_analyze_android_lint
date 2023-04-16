@@ -46,12 +46,6 @@ inputs:
       title: "Step Repository URL"
       description: "Step Repository URL"
       is_required: true
-  - step_clone_dir_branch: step-folder
-    opts:
-      category: Config
-      title: "Step Clone Directory"
-      description: "Step Clone Directory"
-      is_required: true
   - step_branch: main
     opts:
       category: Config
